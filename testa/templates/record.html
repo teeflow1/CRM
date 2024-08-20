@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> Customer Record </h1>
+
+
+<tr>
+
+    <div class="card">
+        <div class="card-header">
+          <strong>  {{ cutomer_record.first_name }} 
+                    {{ cutomer_record.last_name }}</strong>
+        </div>
+        <div class="card-body">
+
+            <p class="card-text">
+               <strong>Email: </strong> {{ cutomer_record.email }}  <br/>
+            </p>
+
+            <p class="card-text">
+               <strong>Country: </strong> {{ cutomer_record.country}} <br/>
+            </p>
+
+            <p class="card-text">
+               <strong>State: </strong> {{ cutomer_record.state }} <br/>
+            </p>
+
+            <p class="card-text">
+               <strong>Address: </strong> {{ cutomer_record.address }} <br/>
+            </p>
+
+            <p class="card-text">
+               <strong>Phone Number: </strong> {{ cutomer_record.phone }} <br/>
+            </p>
+
+            <p class="card-text">
+               <strong>Created At: </strong> {{ cutomer_record.created_at }} <br/>
+            </p>
+
+            <p class="card-text">
+               <strong>ID: </strong> {{ cutomer_record.id }} <br/>
+            </p>
+         <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+         
+        </div>
+      </div>
+     <br/>     
+</tr>
+<a href="{% url 'home' %}" class = "btn btn-primary"> Back </a>
+
+{% endblock %}
+
