@@ -35,15 +35,13 @@ def home(request):
 def customer_record(request, pk):
     
     customer_record = List.objects.get(id=pk)
-    return render(request, 'record.html', {'customer_record', customer_record})
+    return render(request, 'record.html', {'customer_record': customer_record})
 
 
-def register_user(request):  
+def register_user(request):
     
     
     form = UserRegisterForm()
-    
-    
     if request.method == 'POST':
         
         form = UserRegisterForm(request.POST)
@@ -51,12 +49,13 @@ def register_user(request):
         if form.is_valid:
             form.save()  
             username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+            password = form.cleaned_data['password1']
             user = authenticate(request, username=username, password=password)
             login(request, user)
             messages.success(request, 'You have successfully registered, Kindly Log in')
             return redirect('home')
         else:
+            form = UserRegisterForm()
             messages.success(request, 'There is an Error in your form, Try Again!!!!')
             return redirect('home')         
     
