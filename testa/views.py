@@ -38,10 +38,12 @@ def customer_record(request, pk):
     return render(request, 'record.html', {'customer_record', customer_record})
 
 
-def register_user(request):
+def register_user(request):  
     
     
-    form = UserRegisterForm
+    form = UserRegisterForm()
+    
+    
     if request.method == 'POST':
         
         form = UserRegisterForm(request.POST)
