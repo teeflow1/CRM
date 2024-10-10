@@ -10,7 +10,7 @@ class List(models.Model):
     phone = models.CharField(max_length=100)
     created_at = models.DateTimeField()
     
-    fufu
+    
     
     def __str__(self):
         return(f"{self.first_name}{self.last_name}")
