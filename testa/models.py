@@ -9,7 +9,7 @@ class List(models.Model):
     address = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
     created_at = models.DateTimeField()
-    fjuff
+    
     
     
     def __str__(self):
